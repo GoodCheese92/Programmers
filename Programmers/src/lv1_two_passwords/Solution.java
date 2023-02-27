@@ -40,18 +40,20 @@ public class Solution {
 		// 2. z가 넘으면 1로 보내서 나머지 확인.
 		String answer = "";
 		char[] skip_arr = new char[skip.length()];
+		// skip를 문자 배열 skip_arr로 변경
 		for (int i = 0; i < skip.length(); i++) {
 			skip_arr[i] = skip.charAt(i);
 		} // for
 
+		// 오름차순으로 정렬
+		Arrays.sort(skip_arr);
 		for (int i = 0; i < s.length(); i++) {
 			int code = s.charAt(i) + index;
 
-			Arrays.sort(skip_arr);
 			for (int j = 0; j < skip_arr.length;) {
 				if (skip_arr[j] < s.charAt(i)) {
 					skip_arr[j] += 'z';
-					Arrays.sort(skip_arr);
+					Arrays.sort(skip_arr); // 바꾼 다음에 
 					continue;
 				}
 				// 일단 index만큼 갔을 때 skip이 있으면 그만큼 더 가준다.
