@@ -38,6 +38,14 @@ k번 이상 신고된 유저는 게시판 이용이 정지되며, 해당 유저�
 
 public class Main {
 	public static void main(String[] args) {
+		String[] id_list = {"muzi", "frodo", "apeach", "neo"};
+		String[] report = {"muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi"};
+		int k = 2;
+		Solution_v01 sl = new Solution_v01();
+		sl.solution(id_list, report, k);
+		
+		
+		
 		
 	} // end of main
 } // end of class
